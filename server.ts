@@ -1,6 +1,12 @@
-import express, { Application, Request, Response } from 'express';
-import bodyParser from 'body-parser';
+import express, { Application } from 'express';
+import routes from './routes';
 
 const app: Application = express();
 
-app.use(bodyParser.json());
+const PORT = process.env.PORT || 8080;
+
+app.use(routes);
+
+app.listen(PORT, () => {
+    console.log(`Express API is listening on port ${PORT}`);
+})
