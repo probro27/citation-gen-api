@@ -1,4 +1,4 @@
-class Source {
+abstract class Source {
     details: IDetails;
     url: string;
 
@@ -7,9 +7,9 @@ class Source {
         this.details.author = "";
         this.details.title = "";
         this.details.publisher = "";
-        this.details.yearOfPublication = 0;
+        this.details.yearOfPublication = 'n.d.';
         this.details.pageNumbers = [0, 0];
     }
 
-    protected extractData?(): IDetails;
+    public abstract extractData?(): IDetails;
 }

@@ -1,20 +1,31 @@
 class Citation {
-    url: string;
+    source: Source;
     details: IDetails;
 
-    constructor(url: string) {
-        this.details.author = "";
-        this.details.title = "";
-        this.details.publisher = "";
-        this.details.yearOfPublication = 0;
-        this.details.pageNumbers = [0, 0];
-        this.url = url;
+    constructor(source: Source) {
+        this.details = {
+            'author' : "",
+            'title' : "",
+            'publisher' : "",
+            'yearOfPublication': 'n.d.',
+            'pageNumbers': [0, 0]
+        }
+        this.source = source;
     }
 
     protected getCitation?(): string;
 
     public retrieveData(): IDetails {
         console.log('retrieving data');
-        return this.details;
+        let details: IDetails;
+        if(this.source.extractData) {
+            details = this.source.extractData();
+            console.log('retreived data successfully');
+            return details;
+        }
+        else {
+            console.error('retreived data failed');
+            return this.details;
+        }
     }
 }
