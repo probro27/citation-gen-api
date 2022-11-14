@@ -4,8 +4,9 @@
   "description": "Node API to generate citations automatically",
   "main": "server.js",
   "scripts": {
+    "build": "npx tsc",
     "test": "jest",
-    "start": "node server.js",
+    "start": "node dist/server.js",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"

@@ -10,3 +10,5 @@ app.use(routes);
 app.listen(PORT, () => {
     console.log(`Express API is listening on port ${PORT}`);
 });
+
+export default app;
