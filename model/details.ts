@@ -1,4 +1,4 @@
-interface IDetails {
+export interface IDetails {
     author: string,
     title: string,
     publisher: string,

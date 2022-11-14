@@ -1,4 +1,6 @@
-class Citation {
+import { Source } from "./source";
+import { IDetails } from "./details";
+export class Citation {
     source: Source;
     details: IDetails;
 
@@ -13,7 +15,7 @@ class Citation {
         this.source = source;
     }
 
-    protected getCitation?(): string;
+    public getCitation?(): string;
 
     public retrieveData(): IDetails {
         console.log('retrieving data');
