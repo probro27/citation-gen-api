@@ -1,5 +1,7 @@
-import { Router as router } from "express";
+import express from 'express';
 
-router.get('/', () => console.log('hello world!'));
+const router = express.Router();
 
-module.exports = router;
+router.get('/article', () => console.log('hello world!'));
+
+export default router;

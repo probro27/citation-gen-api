@@ -1,8 +1,7 @@
 import express from 'express';
-import apiRoutes from './api';
-
+import citationRoutes from './citation';
 const router = express.Router();
 
-router.use('/api', apiRoutes);
+router.use('/citation', citationRoutes);
 
 export default router;

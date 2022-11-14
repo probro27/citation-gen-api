@@ -33,7 +33,7 @@ export class Article extends Source {
     private async getContent(): Promise<void> {
         const html = await this.fetchPage(this.url);
         const metadata = await this.metascraper({ html: html, url: this.url });
-        this.metadata = metadata;
+        this.assignMetadata(metadata);
     }
 
     private assignMetadata(metadata: Metadata): void {
