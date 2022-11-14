@@ -8,11 +8,12 @@ export class Apa extends Citation {
         this.version = version;
     }
 
-    public getCitation(): string {
+    public async getCitation(): Promise<string> {
         if (this.source.url == '') {
+            console.log('returning empty');
             return "";
         }
-        this.details = this.retrieveData();
+        this.details = await this.retrieveData();
         // right now just supporting version 7 format without page numbers
         const { author, yearOfPublication, title, publisher } = this.details;
         const citation = `${author} (${yearOfPublication}), ${title}, ${publisher}, ${this.source.url}`;

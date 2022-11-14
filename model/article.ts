@@ -37,12 +37,11 @@ export class Article extends Source {
     }
 
     private assignMetadata(metadata: Metadata): void {
-        console.log(metadata);
         this.metadata = metadata;
     }
 
-    public extractData(): IDetails {
-        this.getContent();
+    public async extractData(): Promise<IDetails> {
+        await this.getContent();
         const details: IDetails = {
             'author': this.metadata.author,
             'title': this.metadata.title,

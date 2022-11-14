@@ -15,13 +15,13 @@ export class Citation {
         this.source = source;
     }
 
-    public getCitation?(): string;
+    public getCitation?(): Promise<string>;
 
-    public retrieveData(): IDetails {
+    public async retrieveData(): Promise<IDetails> {
         console.log('retrieving data');
         let details: IDetails;
         if(this.source.extractData) {
-            details = this.source.extractData();
+            details = await this.source.extractData();
             console.log('retreived data successfully');
             return details;
         }

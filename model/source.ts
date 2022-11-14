@@ -14,5 +14,5 @@ export abstract class Source {
         }
     }
 
-    public abstract extractData?(): IDetails;
+    public abstract extractData?(): Promise<IDetails>;
 }
