@@ -9,7 +9,7 @@
     "start": "npx tsc && node dist/server.js",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc '*/*.ts' --write"
   },
   "repository": {
     "type": "git",
